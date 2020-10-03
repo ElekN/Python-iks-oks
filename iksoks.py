@@ -1,8 +1,10 @@
 from sys import exit
 
+ # Empty table
 table = [" "," "," "," "," "," "," "," "," "]
 player = 1
 
+    # Prints table
 def printTable():
     print(table[0] + "|" + table[1] + "|" + table[2])
     print("-----")
@@ -10,6 +12,7 @@ def printTable():
     print("-----")
     print(table[6] + "|" + table[7] + "|" + table[8])
 
+    # Win checking system
 def checkWin():
     for i in range(2):
         if i == 0:
@@ -42,14 +45,15 @@ def checkWin():
             exit()
 
 printTable()
+
 for i in range(9):
     choice = int(input("Enter field: "))
+    # Player chooser
     if player == 1:
         table[choice - 1] = "X"
         player = 2
-    elif player == 2:
+    else
         table[choice -1] = "O"
         player = 1
-    print("\n" * 10)
     printTable()
     checkWin()
